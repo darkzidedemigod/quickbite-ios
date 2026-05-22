@@ -1,0 +1,770 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4DC818DA385C17EF559082A1 /* Pods_QuickBiteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D15370F1D2C5AF5D7D3C20D9 /* Pods_QuickBiteTests.framework */; };
+		E4D5C9843FF970130CE6046A /* Pods_QuickBite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A590A6EE5D5F137029BD51 /* Pods_QuickBite.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8E1381EC2FC0806800402076 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E1381CD2FC0806600402076 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8E1381D42FC0806600402076;
+			remoteInfo = QuickBite;
+		};
+		8E1381F62FC0806800402076 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E1381CD2FC0806600402076 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8E1381D42FC0806600402076;
+			remoteInfo = QuickBite;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2F3C62CBCFEFF271C30B7A5C /* Pods-QuickBite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickBite.release.xcconfig"; path = "Target Support Files/Pods-QuickBite/Pods-QuickBite.release.xcconfig"; sourceTree = "<group>"; };
+		31CFD7493C6B825A07B23A9E /* Pods-QuickBiteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickBiteTests.release.xcconfig"; path = "Target Support Files/Pods-QuickBiteTests/Pods-QuickBiteTests.release.xcconfig"; sourceTree = "<group>"; };
+		440BEB6942A027A4FB13B0B3 /* Pods-QuickBiteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickBiteTests.debug.xcconfig"; path = "Target Support Files/Pods-QuickBiteTests/Pods-QuickBiteTests.debug.xcconfig"; sourceTree = "<group>"; };
+		66A590A6EE5D5F137029BD51 /* Pods_QuickBite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickBite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E1381D52FC0806600402076 /* QuickBite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickBite.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E1381EB2FC0806800402076 /* QuickBiteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickBiteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E1381F52FC0806800402076 /* QuickBiteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickBiteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DD7879180528C5EFFDF3489 /* Pods-QuickBite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickBite.debug.xcconfig"; path = "Target Support Files/Pods-QuickBite/Pods-QuickBite.debug.xcconfig"; sourceTree = "<group>"; };
+		D15370F1D2C5AF5D7D3C20D9 /* Pods_QuickBiteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickBiteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		8E1382852FC081C000402076 /* Exceptions for "QuickBite" folder in "QuickBiteTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Components/CustomTextField.swift,
+				Components/EmptyStateView.swift,
+				Components/LoadingView.swift,
+				Components/MealCardView.swift,
+				Components/PrimaryButton.swift,
+				Components/SearchBarView.swift,
+				"Extensions/UIViewController+Extensions.swift",
+				"GoogleService-Info.plist",
+				Models/Meal.swift,
+				Models/User.swift,
+				Networking/APIEndpoint.swift,
+				Networking/APIService.swift,
+				Networking/NetworkError.swift,
+				Repositories/MealRepository.swift,
+				Services/AuthService.swift,
+				Utilities/Observable.swift,
+				ViewModels/FavoritesViewModel.swift,
+				ViewModels/HomeViewModel.swift,
+				ViewModels/LoginViewModel.swift,
+				ViewModels/MealDetailViewModel.swift,
+				ViewModels/ProfileViewModel.swift,
+				ViewModels/RegisterViewModel.swift,
+				Views/Authentication/LoginViewController.swift,
+				Views/Authentication/RegisterViewController.swift,
+				Views/Favorites/FavoritesViewController.swift,
+				Views/Home/HomeViewController.swift,
+				Views/MainTabBarController.swift,
+				Views/MealDetail/MealDetailViewController.swift,
+				Views/Profile/ProfileViewController.swift,
+			);
+			target = 8E1381EA2FC0806800402076 /* QuickBiteTests */;
+		};
+		8E1382862FC081C000402076 /* Exceptions for "QuickBite" folder in "QuickBiteUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Components/CustomTextField.swift,
+				Components/EmptyStateView.swift,
+				Components/LoadingView.swift,
+				Components/MealCardView.swift,
+				Components/PrimaryButton.swift,
+				Components/SearchBarView.swift,
+				"Extensions/UIViewController+Extensions.swift",
+				"GoogleService-Info.plist",
+				Models/Meal.swift,
+				Models/User.swift,
+				Networking/APIEndpoint.swift,
+				Networking/APIService.swift,
+				Networking/NetworkError.swift,
+				Repositories/MealRepository.swift,
+				Services/AuthService.swift,
+				Utilities/Observable.swift,
+				ViewModels/FavoritesViewModel.swift,
+				ViewModels/HomeViewModel.swift,
+				ViewModels/LoginViewModel.swift,
+				ViewModels/MealDetailViewModel.swift,
+				ViewModels/ProfileViewModel.swift,
+				ViewModels/RegisterViewModel.swift,
+				Views/Authentication/LoginViewController.swift,
+				Views/Authentication/RegisterViewController.swift,
+				Views/Favorites/FavoritesViewController.swift,
+				Views/Home/HomeViewController.swift,
+				Views/MainTabBarController.swift,
+				Views/MealDetail/MealDetailViewController.swift,
+				Views/Profile/ProfileViewController.swift,
+			);
+			target = 8E1381F42FC0806800402076 /* QuickBiteUITests */;
+		};
+		8ECE415A2FC0B4F100194D20 /* Exceptions for "QuickBite" folder in "QuickBite" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 8E1381D42FC0806600402076 /* QuickBite */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		8E1381D72FC0806600402076 /* QuickBite */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				8ECE415A2FC0B4F100194D20 /* Exceptions for "QuickBite" folder in "QuickBite" target */,
+				8E1382852FC081C000402076 /* Exceptions for "QuickBite" folder in "QuickBiteTests" target */,
+				8E1382862FC081C000402076 /* Exceptions for "QuickBite" folder in "QuickBiteUITests" target */,
+			);
+			path = QuickBite;
+			sourceTree = "<group>";
+		};
+		8E1381EE2FC0806800402076 /* QuickBiteTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = QuickBiteTests;
+			sourceTree = "<group>";
+		};
+		8E1381F82FC0806800402076 /* QuickBiteUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = QuickBiteUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8E1381D22FC0806600402076 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4D5C9843FF970130CE6046A /* Pods_QuickBite.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E1381E82FC0806800402076 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DC818DA385C17EF559082A1 /* Pods_QuickBiteTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E1381F22FC0806800402076 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		022B14DC69DE06C4D2B7DD84 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				66A590A6EE5D5F137029BD51 /* Pods_QuickBite.framework */,
+				D15370F1D2C5AF5D7D3C20D9 /* Pods_QuickBiteTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8E1381CC2FC0806600402076 = {
+			isa = PBXGroup;
+			children = (
+				8E1381D72FC0806600402076 /* QuickBite */,
+				8E1381EE2FC0806800402076 /* QuickBiteTests */,
+				8E1381F82FC0806800402076 /* QuickBiteUITests */,
+				8E1381D62FC0806600402076 /* Products */,
+				A02115928AEDA31C82F64D7B /* Pods */,
+				022B14DC69DE06C4D2B7DD84 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8E1381D62FC0806600402076 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8E1381D52FC0806600402076 /* QuickBite.app */,
+				8E1381EB2FC0806800402076 /* QuickBiteTests.xctest */,
+				8E1381F52FC0806800402076 /* QuickBiteUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A02115928AEDA31C82F64D7B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9DD7879180528C5EFFDF3489 /* Pods-QuickBite.debug.xcconfig */,
+				2F3C62CBCFEFF271C30B7A5C /* Pods-QuickBite.release.xcconfig */,
+				440BEB6942A027A4FB13B0B3 /* Pods-QuickBiteTests.debug.xcconfig */,
+				31CFD7493C6B825A07B23A9E /* Pods-QuickBiteTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8E1381D42FC0806600402076 /* QuickBite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E1381FE2FC0806800402076 /* Build configuration list for PBXNativeTarget "QuickBite" */;
+			buildPhases = (
+				8E89DCF2DD60EA152D0583A7 /* [CP] Check Pods Manifest.lock */,
+				8E1381D12FC0806600402076 /* Sources */,
+				8E1381D22FC0806600402076 /* Frameworks */,
+				8E1381D32FC0806600402076 /* Resources */,
+				015EFDFB2048B9141AD05730 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				8E1381D72FC0806600402076 /* QuickBite */,
+			);
+			name = QuickBite;
+			productName = QuickBite;
+			productReference = 8E1381D52FC0806600402076 /* QuickBite.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8E1381EA2FC0806800402076 /* QuickBiteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E1382032FC0806800402076 /* Build configuration list for PBXNativeTarget "QuickBiteTests" */;
+			buildPhases = (
+				955795D7A6F1957ABEF51264 /* [CP] Check Pods Manifest.lock */,
+				8E1381E72FC0806800402076 /* Sources */,
+				8E1381E82FC0806800402076 /* Frameworks */,
+				8E1381E92FC0806800402076 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8E1381ED2FC0806800402076 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				8E1381EE2FC0806800402076 /* QuickBiteTests */,
+			);
+			name = QuickBiteTests;
+			productName = QuickBiteTests;
+			productReference = 8E1381EB2FC0806800402076 /* QuickBiteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8E1381F42FC0806800402076 /* QuickBiteUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E1382062FC0806800402076 /* Build configuration list for PBXNativeTarget "QuickBiteUITests" */;
+			buildPhases = (
+				8E1381F12FC0806800402076 /* Sources */,
+				8E1381F22FC0806800402076 /* Frameworks */,
+				8E1381F32FC0806800402076 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8E1381F72FC0806800402076 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				8E1381F82FC0806800402076 /* QuickBiteUITests */,
+			);
+			name = QuickBiteUITests;
+			productName = QuickBiteUITests;
+			productReference = 8E1381F52FC0806800402076 /* QuickBiteUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8E1381CD2FC0806600402076 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2650;
+				LastUpgradeCheck = 2650;
+				TargetAttributes = {
+					8E1381D42FC0806600402076 = {
+						CreatedOnToolsVersion = 26.5;
+					};
+					8E1381EA2FC0806800402076 = {
+						CreatedOnToolsVersion = 26.5;
+						TestTargetID = 8E1381D42FC0806600402076;
+					};
+					8E1381F42FC0806800402076 = {
+						CreatedOnToolsVersion = 26.5;
+						TestTargetID = 8E1381D42FC0806600402076;
+					};
+				};
+			};
+			buildConfigurationList = 8E1381D02FC0806600402076 /* Build configuration list for PBXProject "QuickBite" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8E1381CC2FC0806600402076;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 8E1381D62FC0806600402076 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8E1381D42FC0806600402076 /* QuickBite */,
+				8E1381EA2FC0806800402076 /* QuickBiteTests */,
+				8E1381F42FC0806800402076 /* QuickBiteUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8E1381D32FC0806600402076 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E1381E92FC0806800402076 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E1381F32FC0806800402076 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		015EFDFB2048B9141AD05730 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QuickBite/Pods-QuickBite-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QuickBite/Pods-QuickBite-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QuickBite/Pods-QuickBite-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8E89DCF2DD60EA152D0583A7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QuickBite-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		955795D7A6F1957ABEF51264 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QuickBiteTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8E1381D12FC0806600402076 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E1381E72FC0806800402076 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E1381F12FC0806800402076 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8E1381ED2FC0806800402076 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8E1381D42FC0806600402076 /* QuickBite */;
+			targetProxy = 8E1381EC2FC0806800402076 /* PBXContainerItemProxy */;
+		};
+		8E1381F72FC0806800402076 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8E1381D42FC0806600402076 /* QuickBite */;
+			targetProxy = 8E1381F62FC0806800402076 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		8E1381FF2FC0806800402076 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DD7879180528C5EFFDF3489 /* Pods-QuickBite.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G2BQE29HN2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QuickBite/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.darkzidedemigod.QuickBite;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8E1382002FC0806800402076 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F3C62CBCFEFF271C30B7A5C /* Pods-QuickBite.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G2BQE29HN2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QuickBite/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.darkzidedemigod.QuickBite;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8E1382012FC0806800402076 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = G2BQE29HN2;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8E1382022FC0806800402076 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = G2BQE29HN2;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8E1382042FC0806800402076 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 440BEB6942A027A4FB13B0B3 /* Pods-QuickBiteTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G2BQE29HN2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.darkzidedemigod.QuickBiteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuickBite.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/QuickBite";
+			};
+			name = Debug;
+		};
+		8E1382052FC0806800402076 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31CFD7493C6B825A07B23A9E /* Pods-QuickBiteTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G2BQE29HN2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.darkzidedemigod.QuickBiteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuickBite.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/QuickBite";
+			};
+			name = Release;
+		};
+		8E1382072FC0806800402076 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G2BQE29HN2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.darkzidedemigod.QuickBiteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = QuickBite;
+			};
+			name = Debug;
+		};
+		8E1382082FC0806800402076 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G2BQE29HN2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.darkzidedemigod.QuickBiteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = QuickBite;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8E1381D02FC0806600402076 /* Build configuration list for PBXProject "QuickBite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E1382012FC0806800402076 /* Debug */,
+				8E1382022FC0806800402076 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8E1381FE2FC0806800402076 /* Build configuration list for PBXNativeTarget "QuickBite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E1381FF2FC0806800402076 /* Debug */,
+				8E1382002FC0806800402076 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8E1382032FC0806800402076 /* Build configuration list for PBXNativeTarget "QuickBiteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E1382042FC0806800402076 /* Debug */,
+				8E1382052FC0806800402076 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8E1382062FC0806800402076 /* Build configuration list for PBXNativeTarget "QuickBiteUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E1382072FC0806800402076 /* Debug */,
+				8E1382082FC0806800402076 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8E1381CD2FC0806600402076 /* Project object */;
+}
