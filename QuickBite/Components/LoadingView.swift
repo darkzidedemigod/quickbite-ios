@@ -30,6 +30,7 @@ final class LoadingView: UIView {
 
     private func setupView() {
         backgroundColor = .systemBackground.withAlphaComponent(0.8)
+        isHidden = true
 
         addSubview(activityIndicator)
         addSubview(messageLabel)

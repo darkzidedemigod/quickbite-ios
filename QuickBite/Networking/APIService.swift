@@ -1,5 +1,6 @@
 import Foundation
 import Alamofire
+import Combine
 
 protocol APIServiceProtocol {
     func fetchCategories(completion: @escaping (Result<[MealCategory], NetworkError>) -> Void)

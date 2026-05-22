@@ -1,5 +1,6 @@
 import Foundation
 
+
 protocol MealRepositoryProtocol {
     func fetchCategories(completion: @escaping (Result<[MealCategory], NetworkError>) -> Void)
     func searchMeals(query: String, completion: @escaping (Result<[Meal], NetworkError>) -> Void)

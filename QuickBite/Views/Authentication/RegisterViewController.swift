@@ -1,13 +1,13 @@
 import UIKit
 import SnapKit
 
-final class LoginViewController: UIViewController {
+final class RegisterViewController: UIViewController {
 
-    private let viewModel = LoginViewModel()
+    private let viewModel = RegisterViewModel()
 
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "QuickBite"
+        label.text = "Create Account"
         label.font = UIFont.systemFont(ofSize: 32, weight: .bold)
         label.textColor = .systemOrange
         label.textAlignment = .center
@@ -16,7 +16,7 @@ final class LoginViewController: UIViewController {
 
     private let subtitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Discover delicious meals"
+        label.text = "Save favorites and meal ideas"
         label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = .systemGray
         label.textAlignment = .center
@@ -32,24 +32,31 @@ final class LoginViewController: UIViewController {
         return textField
     }()
 
-    private let passwordTextField: CustomTextField = {
-        let textField = CustomTextField(
-            icon: UIImage(systemName: "lock"),
-            placeholder: "Password",
-            isSecure: true
-        )
-        return textField
-    }()
+    private let firstNameTextField = CustomTextField(
+        icon: UIImage(systemName: "person"),
+        placeholder: "First Name"
+    )
 
-    private let loginButton: PrimaryButton = {
-        let button = PrimaryButton(title: "Login")
+    private let lastNameTextField = CustomTextField(
+        icon: UIImage(systemName: "person"),
+        placeholder: "Last Name"
+    )
+
+    private let passwordTextField = CustomTextField(
+        icon: UIImage(systemName: "lock"),
+        placeholder: "Password",
+        isSecure: true
+    )
+
+    private let registerButton: PrimaryButton = {
+        let button = PrimaryButton(title: "Register")
         button.isEnabled = false
         return button
     }()
 
-    private let registerButton: UIButton = {
+    private let loginButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Create an account", for: .normal)
+        button.setTitle("Already have an account? Login", for: .normal)
         button.setTitleColor(.systemOrange, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
         return button
@@ -81,18 +88,21 @@ final class LoginViewController: UIViewController {
 
     private func setupView() {
         view.backgroundColor = .systemBackground
+        title = "Register"
 
         view.addSubview(titleLabel)
         view.addSubview(subtitleLabel)
         view.addSubview(stackView)
         stackView.addArrangedSubview(emailTextField)
+        stackView.addArrangedSubview(firstNameTextField)
+        stackView.addArrangedSubview(lastNameTextField)
         stackView.addArrangedSubview(passwordTextField)
         stackView.addArrangedSubview(errorLabel)
-        view.addSubview(loginButton)
         view.addSubview(registerButton)
+        view.addSubview(loginButton)
 
         titleLabel.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).offset(60)
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(40)
             $0.leading.trailing.equalToSuperview().inset(20)
         }
 
@@ -102,26 +112,24 @@ final class LoginViewController: UIViewController {
         }
 
         stackView.snp.makeConstraints {
-            $0.top.equalTo(subtitleLabel.snp.bottom).offset(60)
+            $0.top.equalTo(subtitleLabel.snp.bottom).offset(40)
             $0.leading.trailing.equalToSuperview().inset(20)
         }
 
-        emailTextField.snp.makeConstraints {
-            $0.height.equalTo(50)
+        [emailTextField, firstNameTextField, lastNameTextField, passwordTextField].forEach { textField in
+            textField.snp.makeConstraints {
+                $0.height.equalTo(50)
+            }
         }
 
-        passwordTextField.snp.makeConstraints {
+        registerButton.snp.makeConstraints {
+            $0.top.equalTo(stackView.snp.bottom).offset(32)
+            $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(50)
         }
 
         loginButton.snp.makeConstraints {
-            $0.top.equalTo(stackView.snp.bottom).offset(40)
-            $0.leading.trailing.equalToSuperview().inset(20)
-            $0.height.equalTo(50)
-        }
-
-        registerButton.snp.makeConstraints {
-            $0.top.equalTo(loginButton.snp.bottom).offset(16)
+            $0.top.equalTo(registerButton.snp.bottom).offset(16)
             $0.centerX.equalToSuperview()
         }
     }
@@ -132,44 +140,54 @@ final class LoginViewController: UIViewController {
 
             switch state {
             case .idle:
-                self.loginButton.hideLoading()
+                self.registerButton.hideLoading()
                 self.errorLabel.isHidden = true
             case .loading:
-                self.loginButton.showLoading()
+                self.registerButton.showLoading()
                 self.errorLabel.isHidden = true
             case .success:
-                self.loginButton.hideLoading()
+                self.registerButton.hideLoading()
                 self.navigateToMain()
             case .error(let message):
-                self.loginButton.hideLoading()
+                self.registerButton.hideLoading()
                 self.errorLabel.text = message
                 self.errorLabel.isHidden = false
-                self.loginButton.setErrorState()
+                self.registerButton.setErrorState()
             }
+        }
+
+        viewModel.isValid.bind { [weak self] isValid in
+            self?.registerButton.isEnabled = isValid
         }
     }
 
     private func setupActions() {
-        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
 
-        emailTextField.addGestureRecognizer(
-            UITapGestureRecognizer(target: self, action: nil)
-        )
-        passwordTextField.addGestureRecognizer(
-            UITapGestureRecognizer(target: self, action: nil)
-        )
+        [emailTextField, firstNameTextField, lastNameTextField, passwordTextField].forEach { textField in
+            textField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        }
     }
 
-    @objc private func loginButtonTapped() {
-        viewModel.updateEmail(emailTextField.text ?? "")
-        viewModel.updatePassword(passwordTextField.text ?? "")
-        viewModel.login()
+    @objc private func textFieldDidChange() {
+        updateViewModelFields()
     }
 
     @objc private func registerButtonTapped() {
-        let registerViewController = RegisterViewController()
-        navigationController?.pushViewController(registerViewController, animated: true)
+        updateViewModelFields()
+        viewModel.register()
+    }
+
+    private func updateViewModelFields() {
+        viewModel.updateEmail(emailTextField.text ?? "")
+        viewModel.updateFirstName(firstNameTextField.text ?? "")
+        viewModel.updateLastName(lastNameTextField.text ?? "")
+        viewModel.updatePassword(passwordTextField.text ?? "")
+    }
+
+    @objc private func loginButtonTapped() {
+        navigationController?.popViewController(animated: true)
     }
 
     private func navigateToMain() {

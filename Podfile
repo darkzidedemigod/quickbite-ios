@@ -6,7 +6,9 @@ target 'QuickBite' do
   pod 'Alamofire'
   pod 'SnapKit'
   pod 'FirebaseAnalytics'
+  pod 'FirebaseAuth'
   pod 'FirebaseCrashlytics'
+  pod 'FirebaseFirestore'
 
   target 'QuickBiteTests' do
     inherit! :search_paths

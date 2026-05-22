@@ -111,4 +111,8 @@ final class CustomTextField: UIView {
     func setText(_ text: String) {
         textField.text = text
     }
+
+    func addTarget(_ target: Any?, action: Selector, for controlEvents: UIControl.Event) {
+        textField.addTarget(target, action: action, for: controlEvents)
+    }
 }

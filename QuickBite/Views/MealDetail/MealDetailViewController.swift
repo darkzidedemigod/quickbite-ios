@@ -97,9 +97,14 @@ final class MealDetailViewController: UIViewController {
         populateData()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+
     private func setupView() {
         view.backgroundColor = .systemBackground
-        title = "Meal Details"
+        setupNavigationBar()
 
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
@@ -164,6 +169,18 @@ final class MealDetailViewController: UIViewController {
         }
     }
 
+    private func setupNavigationBar() {
+        title = "Meal Details"
+        let backButton = UIBarButtonItem(
+            image: UIImage(systemName: "chevron.left"),
+            style: .plain,
+            target: self,
+            action: #selector(backButtonTapped)
+        )
+        backButton.accessibilityLabel = "Back to meals"
+        navigationItem.leftBarButtonItem = backButton
+    }
+
     private func setupBindings() {
         viewModel.isFavorite.bind { [weak self] isFavorite in
             self?.favoriteButton.isSelected = isFavorite
@@ -211,5 +228,13 @@ final class MealDetailViewController: UIViewController {
 
     @objc private func favoriteButtonTapped() {
         viewModel.toggleFavorite()
+    }
+
+    @objc private func backButtonTapped() {
+        if let navigationController = navigationController, navigationController.viewControllers.count > 1 {
+            navigationController.popViewController(animated: true)
+        } else {
+            dismiss(animated: true)
+        }
     }
 }

@@ -1,11 +1,11 @@
 import Foundation
 
-struct Ingredient {
+struct Ingredient: Sendable {
     let name: String
     let measure: String
 }
 
-struct Meal: Codable, Equatable {
+struct Meal: Codable, Equatable, Sendable {
     let id: String
     let name: String
     let thumbnailURL: String
@@ -28,7 +28,7 @@ struct Meal: Codable, Equatable {
         case strMeasure16, strMeasure17, strMeasure18, strMeasure19, strMeasure20
     }
 
-    init(from decoder: Decoder) throws {
+    nonisolated init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
         id = try container.decode(String.self, forKey: .idMeal)
@@ -63,7 +63,7 @@ struct Meal: Codable, Equatable {
         ingredients = ingredientsArray.isEmpty ? nil : ingredientsArray
     }
 
-    func encode(to encoder: Encoder) throws {
+    nonisolated func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(id, forKey: .idMeal)
         try container.encode(name, forKey: .strMeal)
@@ -98,17 +98,58 @@ struct Meal: Codable, Equatable {
 
 // MARK: - API Response Wrappers
 
-struct MealSearchResponse: Codable {
+struct MealSearchResponse: Decodable, Sendable {
     let meals: [Meal]?
+
+    enum CodingKeys: String, CodingKey {
+        case meals
+    }
+
+    nonisolated init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        meals = try container.decodeIfPresent([Meal].self, forKey: .meals)
+    }
 }
 
-struct MealCategoriesResponse: Codable {
+struct MealCategoriesResponse: Decodable, Sendable {
     let categories: [MealCategory]
+
+    enum CodingKeys: String, CodingKey {
+        case categories
+    }
+
+    nonisolated init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        categories = try container.decode([MealCategory].self, forKey: .categories)
+    }
 }
 
-struct MealCategory: Codable {
+struct MealCategory: Codable, Sendable {
     let idCategory: String
     let strCategory: String
     let strCategoryThumb: String
     let strCategoryDescription: String
+
+    enum CodingKeys: String, CodingKey {
+        case idCategory
+        case strCategory
+        case strCategoryThumb
+        case strCategoryDescription
+    }
+
+    nonisolated init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        idCategory = try container.decode(String.self, forKey: .idCategory)
+        strCategory = try container.decode(String.self, forKey: .strCategory)
+        strCategoryThumb = try container.decode(String.self, forKey: .strCategoryThumb)
+        strCategoryDescription = try container.decode(String.self, forKey: .strCategoryDescription)
+    }
+
+    nonisolated func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(idCategory, forKey: .idCategory)
+        try container.encode(strCategory, forKey: .strCategory)
+        try container.encode(strCategoryThumb, forKey: .strCategoryThumb)
+        try container.encode(strCategoryDescription, forKey: .strCategoryDescription)
+    }
 }
