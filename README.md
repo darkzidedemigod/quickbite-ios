@@ -1,167 +1,321 @@
-# QuickBite
+# 🍔 QuickBite
 
-A food discovery iOS application built with Swift, UIKit, and MVVM architecture.
+<p align="center">
+  <b>QuickBite</b> is a food discovery iOS application built using <b>Swift</b>, <b>UIKit</b>, and <b>MVVM architecture</b>.
+</p>
 
-## Features
+<p align="center">
+  Discover meals, create an account, manage favorites, and explore recipes through a scalable and testable iOS architecture.
+</p>
 
-- **Authentication** - Mock login with email/password validation
-- **Home Screen** - Browse meal categories and search for meals
-- **Meal Detail** - View meal images, ingredients, and cooking instructions
-- **Favorites** - Save and manage favorite meals
-- **Profile** - User info display with logout functionality
+---
 
-## Requirements
+## 📱 Features
+
+### 🔐 Authentication
+- Firebase Authentication integration
+- Login with email and password
+- User registration screen
+- Registration linked directly from login screen
+- Input validation
+- Persistent login sessions
+- Secure logout functionality
+
+### 📝 Registration
+- Create a new account
+- Store user information in Firestore
+- First name and last name support
+- Email/password validation
+- Error handling and feedback
+
+### 🏠 Home Screen
+- Browse meal categories
+- Search meals with debounce functionality
+- Dynamic meal listings
+- Loading and empty states
+
+### 🍽️ Meal Details
+- Display meal image
+- Ingredients list
+- Cooking instructions
+- Add/remove favorites
+
+### ❤️ Favorites
+- Save favorite meals
+- Manage favorite meal collection
+- Persistent local storage
+
+### 👤 Profile
+- Display authenticated user information
+- View user details from Firestore
+- Logout support
+
+---
+
+## 🛠 Tech Stack
+
+| Technology | Usage |
+|------------|-------|
+| Swift | Main programming language |
+| UIKit | User Interface |
+| MVVM | Architectural pattern |
+| Alamofire | Networking |
+| SnapKit | Programmatic Auto Layout |
+| Firebase Authentication | User authentication |
+| Firestore | Cloud database |
+| CocoaPods | Dependency management |
+| UserDefaults | Local persistence |
+| XCTest | Unit testing |
+
+---
+
+## 📋 Requirements
 
 - iOS 15.0+
 - Xcode 14.0+
 - CocoaPods
 
-## Setup Instructions
+---
 
-1. **Clone the repository**
+## 🚀 Installation
+
+### 1. Clone repository
 
 ```bash
 git clone https://github.com/darkzidedemigod/quickbite-ios.git
 cd quickbite-ios
 ```
 
-2. **Install dependencies via CocoaPods**
+### 2. Install dependencies
 
 ```bash
 pod install
 ```
 
-3. **Open the workspace**
+### 3. Configure Firebase
+
+1. Create a Firebase project
+2. Add an iOS application in Firebase Console
+3. Download:
+
+```text
+GoogleService-Info.plist
+```
+
+4. Add it into your Xcode project root
+5. Enable:
+
+- Authentication → Email/Password
+- Firestore Database
+
+---
+
+### 4. Open workspace
 
 ```bash
 open QuickBite.xcworkspace
 ```
 
-4. **Build and run**
+---
 
-Select a simulator (iOS 15.0+) and press `Cmd + R` to build and run.
+### 5. Run application
 
-## Login Credentials
+Open in Xcode and press:
 
-For testing the mock authentication:
-
-- **Email:** `test@quickbite.com`
-- **Password:** `password123`
-
-## Architecture
-
-### MVVM (Model-View-ViewModel)
-
+```bash
+Cmd + R
 ```
+
+---
+
+## 🏗 Architecture
+
+QuickBite follows **MVVM (Model–View–ViewModel)** combined with a Repository pattern.
+
+### Architecture Flow
+
+```text
 View (ViewController)
-  → ViewModel (Business Logic + State Management)
-    → Repository (Data Abstraction Layer)
-      → Service/API (Network Calls / Local Storage)
+        ↓
+ViewModel
+(Business Logic + State Management)
+        ↓
+Repository
+(Data Abstraction Layer)
+        ↓
+Services
+(API / Firebase / Local Storage)
 ```
 
-### Data Flow
+---
 
-1. **View** sends user actions to the **ViewModel**
-2. **ViewModel** processes logic and calls **Repository** methods
-3. **Repository** handles data fetching from **APIService** (network) or **UserDefaults** (local)
-4. **ViewModel** updates its **Observable** properties
-5. **View** observes changes and updates UI accordingly
+## 🔄 Data Flow
 
-### State Management
+1. User interaction happens in View
+2. View sends actions to ViewModel
+3. ViewModel processes business logic
+4. Repository communicates with Services
+5. Services retrieve local or remote data
+6. Observable updates UI automatically
 
-Each ViewModel uses an enum-based state system:
+---
 
-- `loading` - Data is being fetched
-- `success(T)` - Data loaded successfully
-- `error(String)` - Error occurred with message
-- `empty` - No data available
+## 📦 State Management
 
-## Project Structure
+ViewModels use an enum-based state system:
 
+```swift
+enum ViewState<T> {
+    case loading
+    case success(T)
+    case error(String)
+    case empty
+}
 ```
+
+Available states:
+
+- `loading`
+- `success(T)`
+- `error(String)`
+- `empty`
+
+---
+
+## 📂 Project Structure
+
+```text
 QuickBite/
 ├── App/
-│   ├── AppDelegate.swift          # Application entry point
-│   └── SceneDelegate.swift        # Scene lifecycle & window setup
 ├── Models/
-│   ├── Meal.swift                 # Meal model with Codable + Ingredient
-│   └── User.swift                 # User authentication model
 ├── Networking/
-│   ├── APIService.swift           # Alamofire-based network service
-│   ├── APIEndpoint.swift          # API endpoint definitions
-│   └── NetworkError.swift         # Network error handling
 ├── Repositories/
-│   └── MealRepository.swift       # Data layer abstraction
 ├── Services/
-│   └── AuthService.swift          # Mock authentication service
 ├── ViewModels/
-│   ├── LoginViewModel.swift       # Login screen logic & validation
-│   ├── HomeViewModel.swift        # Home screen data & search
-│   ├── MealDetailViewModel.swift  # Meal detail & favorites
-│   ├── FavoritesViewModel.swift   # Favorites management
-│   └── ProfileViewModel.swift     # User profile & logout
+│   ├── LoginViewModel.swift
+│   ├── RegisterViewModel.swift
+│   ├── HomeViewModel.swift
+│   ├── MealDetailViewModel.swift
+│   ├── FavoritesViewModel.swift
+│   └── ProfileViewModel.swift
+│
 ├── Views/
 │   ├── Authentication/
-│   │   └── LoginViewController.swift
+│   │   ├── LoginViewController.swift
+│   │   └── RegisterViewController.swift
+│   │
 │   ├── Home/
-│   │   └── HomeViewController.swift
 │   ├── MealDetail/
-│   │   └── MealDetailViewController.swift
 │   ├── Favorites/
-│   │   └── FavoritesViewController.swift
 │   └── Profile/
-│       └── ProfileViewController.swift
+│
 ├── Components/
-│   ├── PrimaryButton.swift        # Reusable button with loading state
-│   ├── CustomTextField.swift      # Input field with validation UI
-│   ├── SearchBarView.swift        # Search input with debounce
-│   ├── MealCardView.swift         # Meal card with gradient overlay
-│   ├── LoadingView.swift          # Activity indicator overlay
-│   └── EmptyStateView.swift       # Empty state placeholder
 ├── Utilities/
-│   └── Observable.swift           # Simple observable binding class
 └── Extensions/
-    └── UIViewController+Extensions.swift  # Alert helpers
 
 QuickBiteTests/
 └── Tests/
-    ├── LoginViewModelTests.swift   # Login validation & auth flow
-    ├── HomeViewModelTests.swift    # Categories, search, empty states
-    ├── APIServiceTests.swift       # Network request mocking
-    └── FavoritesViewModelTests.swift   # Favorites CRUD operations
 ```
 
-## Dependencies
+---
 
-| Pod | Purpose |
-|-----|---------|
-| [Alamofire](https://github.com/Alamofire/Alamofire) | HTTP networking |
-| [SnapKit](https://github.com/SnapKit/SnapKit) | Auto Layout DSL |
-| FirebaseAnalytics (optional) | App analytics |
-| FirebaseCrashlytics (optional) | Crash reporting |
+## 🧩 Reusable Components
 
-## Design Decisions
+Reusable UI components include:
 
-- **Programmatic UI only** - No storyboards, XIBs, or SwiftUI
-- **SnapKit for layout** - No NSLayoutConstraint.activate() calls
-- **Protocol-based services** - Enables dependency injection and mocking for tests
-- **Observable pattern** - Lightweight binding without Combine or RxSwift
-- **Repository pattern** - Centralizes data access and abstracts data sources
-- **Weak references** - Prevents retain cycles in closures
+- `PrimaryButton`
+- `CustomTextField`
+- `SearchBarView`
+- `MealCardView`
+- `LoadingView`
+- `EmptyStateView`
 
-## Running Tests
+---
 
-Run tests from Xcode:
+## 📚 Dependencies
 
-1. Select `QuickBiteTests` scheme
-2. Press `Cmd + U`
+| Dependency | Purpose |
+|------------|---------|
+| Alamofire | Networking |
+| SnapKit | Auto Layout |
+| FirebaseAuth | Authentication |
+| FirebaseFirestore | Cloud database |
+| FirebaseAnalytics | Analytics |
+| FirebaseCrashlytics | Crash reporting |
 
-Or via command line:
+---
+
+## 🎯 Design Decisions
+
+### Programmatic UI
+- No Storyboards
+- No XIB
+- No SwiftUI
+
+### Architecture Principles
+- MVVM architecture
+- Repository pattern
+- Protocol-based services
+- Dependency injection
+- Testable components
+
+### Performance & Maintainability
+- Lightweight Observable implementation
+- Debounced searching
+- Weak references for memory safety
+- Reusable UI components
+
+---
+
+## 🧪 Running Tests
+
+### Via Xcode
+
+Select:
+
+```text
+QuickBiteTests
+```
+
+Then run:
 
 ```bash
-xcodebuild test -workspace QuickBite.xcworkspace -scheme QuickBite -destination 'platform=iOS Simulator,name=iPhone 14' -only-testing QuickBiteTests
+Cmd + U
 ```
 
-## License
+### Via terminal
 
-MIT
+```bash
+xcodebuild test \
+-workspace QuickBite.xcworkspace \
+-scheme QuickBite \
+-destination 'platform=iOS Simulator,name=iPhone 14'
+```
+
+---
+
+## 🔮 Future Improvements
+
+- Social login (Google / Apple Sign In)
+- Offline caching
+- Dark mode
+- Recipe filtering
+- User profile editing
+- Push notifications
+- Pagination support
+- UI snapshot testing
+
+---
+
+## 📄 License
+
+MIT License
+
+---
+
+## 👨‍💻 Author
+
+Nestor Alorro
+
+GitHub:  
+https://github.com/darkzidedemigod
